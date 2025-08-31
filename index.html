@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tretto.io - Intelligent Information Pipeline</title>
+    <link rel="stylesheet" href="tretto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066CC;     /* Technical blue */
+            --secondary-color: #1A1A1A;   /* Near black */
+            --accent-color: #00B4D8;      /* Bright cyan */
+            --text-color: #2A2A2A;        /* Slightly softer black */
+            --background-color: #FAFAFA;  /* Light gray background */
+            --section-bg: #F0F5FF;        /* Light blue tint */
+        }
+
+        /* Technical styling overrides */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background-color);
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--section-bg) 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 45%, rgba(0, 102, 204, 0.1) 45%, transparent 55%);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        .pipeline-visual {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--background-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .pipeline-step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .pipeline-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .service-card {
+            border: 1px solid rgba(0, 102, 204, 0.1);
+            background: white;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .cta {
+            background-color: var(--primary-color);
+            border: 2px solid transparent;
+        }
+
+        .cta:hover {
+            background-color: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline-visual {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pipeline-step:not(:last-child)::after {
+                content: '↓';
+                right: 50%;
+                top: auto;
+                bottom: -20px;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <img src="logo.png" alt="Tretto Logo" class="logo">
+            <div class="nav-links">
+                <a href="https://tretto.eu">tretto.eu</a>
+                <a href="https://tretto.tech">tretto.tech</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Intelligent Information Pipeline</h1>
+            <p>Transform information overload into actionable insights with our AI-powered content distillation system</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="pipeline-visual">
+            <div class="pipeline-step">
+                <h3>Input</h3>
+                <p><code>newsletters + YouTube + RSS</code></p>
+            </div>
+            <div class="pipeline-step">
+                <h3>Process</h3>
+                <p><code>AI analysis + filtering</code></p>
+            </div>
+            <div class="pipeline-step">
+                <h3>Output</h3>
+                <p><code>executive summaries</code></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-number">90%</div>
+                <p>Time Saved on Information Processing</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">1000+</div>
+                <p>Sources Monitored</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">24/7</div>
+                <p>Continuous Analysis</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services container">
+        <h2>Features</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Smart Aggregation</h3>
+                <p>Automatically collect and categorize content from multiple sources in real-time.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI-Powered Analysis</h3>
+                <p>Advanced algorithms identify key insights and trends across your information streams.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Summaries</h3>
+                <p>Receive personalized executive briefings tailored to your interests and priorities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services container">
+        <h2>Tretto Platform</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Knowledge Consulting</h3>
+                <p>Get expert guidance on knowledge management and AI initiatives with tretto.eu</p>
+                <a href="https://tretto.eu" class="cta">Visit tretto.eu</a>
+            </div>
+            <div class="service-card">
+                <h3>Technology Integration</h3>
+                <p>Seamlessly integrate with leading content management platforms via tretto.tech</p>
+                <a href="https://tretto.tech" class="cta">Visit tretto.tech</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tretto IO. All rights reserved.</p>
+            <div class="nav-links">
+                <a href="https://tretto.eu">tretto.eu</a>
+                <a href="https://tretto.tech">tretto.tech</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
